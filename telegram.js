@@ -15,11 +15,14 @@ const bot = new TelegramBot(token);
 bot.setWebHook(`${url}/t`);
 
 bot.onText(/\/test (.+)/, function(msg, match) {
-
+  const user = msg.from.username;
   const chatId = msg.chat.id;
-  const resp = match[1];
+  const resp = 'Параметры команды: ' + match[1];
 
-  bot.sendMessage(chatId, resp);
+  bot.sendMessage(chatId, resp, {
+    "reply_markup": {
+    "keyboard": [["Клавиша #1", "Клавиша #2"],   ["Клавиша #3"], ["Клавиша #4"]]
+  }});
 });
 
 bot.on('message', function(msg) {
