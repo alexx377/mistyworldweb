@@ -1,11 +1,82 @@
+:root {
+  --block-gb-color: rgba(50, 50, 50, 0.8);
+  --block-shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+@font-face {
+ font-family: "Type";
+ src: url("/fnt/type.ttf") format("opentype");
+}
+
 body {
   background-image: url('/img/back.jpg');
-  font-family: sans-serif;
-  color: #aabbbb;
 }
 
 body div {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--block-gb-color);
   padding: 10px;
   border-radius: 0px 30px;
+  box-shadow: 0px 0px 15px var(--block-shadow-color);
+    -moz-box-shadow: 0px 0px 15px var(--block-shadow-color);
+    -webkit-box-shadow: 0px 0px 15px var(--block-shadow-color);
+}
+
+body div div {
+  all: initial;
+  display: inline-block;
+  font-family: "Type", sans-serif;
+  color: #aabbbb;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+body div div#link {
+  all: initial;
+  display: inline-block;
+  font-family: "Type", sans-serif;
+  font-size: 14pt;
+  color: #aabbbb;
+  margin: 10px;
+  float: right;
+  vertical-align: bottom;
+}
+
+body div div img {
+  width: 100px;
+  height: 100px;
+}
+
+body div div h1 {
+  margin: 5px;
+  padding: 0;
+  font-size: 36pt;
+  font-weight: lighter;
+}
+
+body div div p {
+  margin: 5px;
+  padding: 0;
+  font-size: 14pt;
+}
+
+body div div#link a {
+  display: flex;
+  line-height: 32px;
+}
+
+body div div#link a img {
+    width: 32px;
+    height: 32px;
+}
+
+body div div#link a:link, body div div#link a:visited {
+  color: #aabbbb;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+body div div#link a:hover, body div div#link a:active {
+  color: #aabbbb;
+  text-decoration: none;
+  font-weight: bolder;
 }
